@@ -145,10 +145,10 @@ const About = () => {
                 I&apos;m Audumber Shirodkar, a dedicated Computer Engineering student at Goa College of Engineering (GEC) with a passion for full-stack web development. My journey in technology is driven by a desire to build innovative and efficient solutions that improve user experiences.
               </p>
               <p className="text-gray-300 leading-relaxed">
-                With proficiency in React, Next.js, CSS, HTML, Node.js, Bootstrap, C, and C++, I enjoy working across the entire web development stack, from creating sleek and responsive front-end interfaces to building robust back-end architectures.
+                With proficiency in  Next.js, Node.js,Tailwind and MongoDBI enjoy working across the entire web development stack, from creating sleek and responsive front-end interfaces to building robust back-end architectures.
               </p>
               <p className="text-gray-300 leading-relaxed">
-                As a second-year engineering student, I constantly explore new technologies and frameworks, pushing the boundaries of my knowledge while actively contributing to open-source projects. I am excited to continue growing my skills and making impactful contributions in the world of web development.
+                As a Third-year engineering student, I constantly explore new technologies and frameworks, pushing the boundaries of my knowledge while actively contributing to open-source projects. I am excited to continue growing my skills and making impactful contributions in the world of web development.
               </p>
             </div>
           </motion.div>

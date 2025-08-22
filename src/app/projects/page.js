@@ -12,7 +12,7 @@ const Projects = () => {
       id: 4,
       title: "CollabPad",
       description:
-        "An app made for students to chat and play a scribble guessing game during lab sessions.",
+        "An app made for students to chat and play a scribble guessing game during Boring lab sessions.",
       tags: ["Next.js", "Node.js", "socket.io"],
       category: "web",
       github: "https://github.com/audumber28/CollabPad",
@@ -32,7 +32,7 @@ const Projects = () => {
       id: 1,
       title: "Netflix Clone",
       description:
-        "A responsive Netflix interface clone built with React and Firebase, featuring authentication and dynamic content.",
+        "A responsive Netflix interface clone built with HTML and CSS",
       tags: ["HTML", "CSS"],
       category: "web",
       github: "https://github.com/audumber28/Netflix-Clone",

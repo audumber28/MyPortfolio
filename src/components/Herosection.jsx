@@ -228,62 +228,7 @@ const HeroSection = () => {
               transition={{ duration: 0.8, delay: 1.6 }}
               className="pt-2"
             >
-              <div 
-                className="cursor-pointer p-3 bg-gray-900 border border-gray-800 rounded-lg hover:border-red-500/50 transition-colors duration-300"
-                onClick={toggleGithubStats}
-              >
-                <div className="flex justify-between items-center">
-                  <div className="flex items-center gap-2">
-                    <FaGithub className="text-xl text-gray-400" />
-                    <span className="font-medium text-white">GitHub Activity</span>
-                  </div>
-                  <HiOutlineChevronDown className={`text-gray-400 transition-transform duration-300 ${showGithubStats ? 'rotate-180' : ''}`} />
-                </div>
-                <AnimatePresence>
-                  {showGithubStats && (
-                    <motion.div 
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: 'auto', opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3 }}
-                      className="mt-3 pt-3 border-t border-gray-800 overflow-hidden"
-                    >
-                      <div className="grid grid-cols-3 gap-2 text-center">
-                        <div className="flex flex-col">
-                          <CountUp 
-                            start={0} 
-                            end={12} 
-                            duration={2.5} 
-                            className="text-red-500 text-xl font-bold"
-                          />
-                          <span className="text-xs text-gray-400">Repositories</span>
-                        </div>
-                        <div className="flex flex-col">
-                          <CountUp 
-                            start={0} 
-                            end={8} 
-                            duration={2.5} 
-                            className="text-red-500 text-xl font-bold"
-                          />
-                          <span className="text-xs text-gray-400">Followers</span>
-                        </div>
-                        <div className="flex flex-col">
-                          <CountUp 
-                            start={0} 
-                            end={20} 
-                            duration={2.5} 
-                            className="text-red-500 text-xl font-bold"
-                          />
-                          <span className="text-xs text-gray-400">Following</span>
-                        </div>
-                        <div className="col-span-3 text-center mt-2">
-                          <span className="text-xs text-gray-500">Last active: August 22, 2025</span>
-                        </div>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
+              
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
