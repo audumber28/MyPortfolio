@@ -79,13 +79,13 @@ const Contact = () => {
           <div className="relative">
             <Image
               className="rounded border-2 border-red-500 shadow-[0_0_15px_rgba(185,28,28,0.5)]"
-              src="/IMG20250330211809[1].jpg"
+              src="/IMG20250330211809.jpg"
               width={100}
               height={100}
               alt="Audumber Shirodkar"
             />
             <div className="absolute -bottom-2 -right-2 bg-red-500 rounded-full p-1">
-              <div className="h-3 w-3 bg-green-400 rounded-full pulse"></div>
+             <div className="h-3 w-3 bg-green-400 rounded-full animate-pulse"></div>
             </div>
           </div>
           
