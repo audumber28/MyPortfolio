@@ -95,7 +95,7 @@ const About = () => {
               <div className="absolute -inset-1 bg-gradient-to-r from-red-600 to-red-900 rounded-full opacity-75 group-hover:opacity-100 blur-md group-hover:blur-lg transition-all duration-500"></div>
               <div className="relative w-[250px] h-[250px] rounded-full overflow-hidden">
                 <Image
-                  src="/IMG20250330211809[1].jpg"
+                  src="/main.jpg"
                   alt="Audumber Shirodkar"
                   fill
                   sizes="250px"

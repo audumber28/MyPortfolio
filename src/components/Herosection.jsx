@@ -473,7 +473,7 @@ const HeroSection = () => {
                 {/* Image */}
                 <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-gray-800 shadow-[0_0_30px_rgba(220,38,38,0.2)]">
                   <Image 
-                    src="/IMG20250330211809[1].jpg" 
+                    src="/main.jpg" 
                     alt="Audumber Shirodkar" 
                     fill
                     className="object-cover"
