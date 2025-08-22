@@ -13,6 +13,8 @@ import CountUp from 'react-countup';
 const HeroSection = () => {
   const [activeTab, setActiveTab] = useState('student');
   const [showGithubStats, setShowGithubStats] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(0);
+  
   
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -44,6 +46,17 @@ const HeroSection = () => {
   const currentYear = 2025; // Using the provided year
   const gradYear = 2028;
   const yearOfStudy = gradYear - currentYear<= 4 ? gradYear - currentYear : 4;
+   useEffect(() => {
+    // Update width state with actual window width
+    setWindowWidth(window.innerWidth);
+    
+    // Optional: Add resize listener
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    
+    // Clean up
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const toggleGithubStats = () => {
     setShowGithubStats(!showGithubStats);
@@ -64,7 +77,7 @@ const HeroSection = () => {
               initial={{ opacity: 0.1, x: -100 }}
               animate={{ 
                 opacity: [0.05, 0.1, 0.05], 
-                x: i % 2 === 0 ? [-100, window.innerWidth] : [window.innerWidth, -100] 
+                x: i % 2 === 0 ? [-100,  windowWidth] : [ windowWidth, -100] 
               }}
               transition={{ 
                 duration: Math.random() * 100 + 150,
