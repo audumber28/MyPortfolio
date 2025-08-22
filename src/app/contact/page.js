@@ -142,7 +142,7 @@ const Contact = () => {
             <div className="mt-4">
               <h3 className="text-xl font-semibold mb-2">Connect With Me</h3>
               <p className="text-gray-300">
-                I'm always open to new opportunities and collaborations. Feel free to reach out!
+                It&apos;m always open to new opportunities and collaborations. Feel free to reach out!
               </p>
               <div className="flex space-x-4 mt-4">
                 <a 
@@ -256,7 +256,7 @@ const Contact = () => {
             <span className="text-red-500">Contact Me?</span>
           </h2>
           <p className="text-gray-300">
-            I'm always looking for new challenges and opportunities to collaborate. Whether you have questions, feedback, or ideas for a project, I'd love to hear from you. Your thoughts are important, and I'm here to help bring your vision to life.
+            It&apos;m always looking for new challenges and opportunities to collaborate. Whether you have questions, feedback, or ideas for a project, I'd love to hear from you. Your thoughts are important, and I'm here to help bring your vision to life.
           </p>
         </div>
 

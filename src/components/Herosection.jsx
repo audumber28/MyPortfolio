@@ -178,7 +178,7 @@ const HeroSection = () => {
                 transition={{ duration: 0.6, delay: 0.6 }}
                 className="font-popins text-3xl md:text-5xl text-white leading-tight font-medium"
               >
-                I'm a Full Stack
+                It&apos;m a Full Stack
               </motion.h2>
             </div>
             
@@ -483,13 +483,14 @@ const HeroSection = () => {
                       <FaGraduationCap />
                       Student
                     </button>
-                    <button 
-                      className={`px-3 py-1 rounded-full text-xs flex items-center gap-1 transition-colors duration-300 ${activeTab === 'developer' ? 'bg-red-500 text-white' : 'text-gray-400 hover:text-white'}`}
-                      onClick={() => setActiveTab('developer')}
-                    >
-                      <BiCodeAlt />
-                      Developer
-                    </button>
+                   <button 
+  className={`px-3 py-1 rounded-full text-xs flex items-center gap-1 transition-colors duration-300 ${activeTab === "developer" ? "bg-red-500 text-white" : "text-gray-400 hover:text-white"}`}
+  onClick={() => setActiveTab("developer")}
+>
+  <BiCodeAlt />
+  Developer
+</button>
+
                   </motion.div>
                 </div>
                 

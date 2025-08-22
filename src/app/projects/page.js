@@ -157,7 +157,7 @@ const Projects = () => {
                         <h3 className="text-xl font-bold mb-2">@audumber28</h3>
                         <p className="text-gray-400 text-center mb-6">
                             Check out my open-source contributions and more projects on GitHub. 
-                            I'm actively developing new projects and contributing to the developer community.
+                            It&apos;m actively developing new projects and contributing to the developer community.
                         </p>
                         <a 
                             href="https://github.com/audumber28"
@@ -175,7 +175,7 @@ const Projects = () => {
                 <div className="bg-gradient-to-br from-gray-900 to-black border border-gray-800 rounded-lg p-8 text-center hover:border-red-500 hover:shadow-[0_0_15px_rgba(185,28,28,0.2)] transition-all duration-500 mb-16">
                     <h2 className="text-2xl font-bold mb-4">Interested in working together?</h2>
                     <p className="text-gray-400 mb-6 max-w-2xl mx-auto">
-                        I'm always open to new opportunities and collaborations. If you have a project in mind 
+                        It&apos;m always open to new opportunities and collaborations. If you have a project in mind 
                         or just want to connect, feel free to reach out!
                     </p>
                     <button 
