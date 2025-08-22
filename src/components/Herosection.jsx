@@ -14,23 +14,17 @@ const HeroSection = () => {
   const [activeTab, setActiveTab] = useState('student');
   const [showGithubStats, setShowGithubStats] = useState(false);
   const [windowWidth, setWindowWidth] = useState(0);
-  
-  
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ['start start', 'end start']
   });
-  
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
   const y = useTransform(scrollYProgress, [0, 0.5], [0, 100]);
   const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.95]);
-  
   const scrollToContent = () => {
     document.getElementById('about-section').scrollIntoView({ behavior: 'smooth' });
   };
-  
-  // Student-relevant technologies
   const techStack = [
     { name: 'React', color: '#61DAFB' },
     { name: 'Next.js', color: '#ffffff' },
@@ -41,35 +35,23 @@ const HeroSection = () => {
     { name: 'Tailwind', color: '#06B6D4' },
     { name: 'Git', color: '#F05032' },
   ];
-
-  // Current date for student timeline display
-  const currentYear = 2025; // Using the provided year
+  const currentYear = 2025;
   const gradYear = 2028;
   const yearOfStudy = gradYear - currentYear<= 4 ? gradYear - currentYear : 4;
-   useEffect(() => {
-    // Update width state with actual window width
+  useEffect(() => {
     setWindowWidth(window.innerWidth);
-    
-    // Optional: Add resize listener
     const handleResize = () => setWindowWidth(window.innerWidth);
     window.addEventListener('resize', handleResize);
-    
-    // Clean up
     return () => window.removeEventListener('resize', handleResize);
   }, []);
-
   const toggleGithubStats = () => {
     setShowGithubStats(!showGithubStats);
   };
 
   return (
     <section className="relative min-h-screen overflow-hidden bg-[#0a0a0a]" id="home" ref={containerRef}>
-      {/* Animated background */}
       <div className="absolute inset-0 z-0 overflow-hidden">
-        {/* Subtle grid pattern */}
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,0,0,0.01)_1px,transparent_1px),linear-gradient(90deg,rgba(255,0,0,0.01)_1px,transparent_1px)] bg-[size:100px_100px]"></div>
-        
-        {/* Code lines background - subtle animation */}
         <div className="absolute inset-0 opacity-[0.03]">
           {[...Array(20)].map((_, i) => (
             <motion.div
@@ -94,8 +76,6 @@ const HeroSection = () => {
             />
           ))}
         </div>
-        
-        {/* Glow effects */}
         <motion.div
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 0.07, scale: 1 }}
@@ -109,21 +89,17 @@ const HeroSection = () => {
           className="absolute -bottom-[20%] -right-[10%] w-[40%] h-[40%] rounded-full bg-red-700 blur-[120px]"
         />
       </div>
-      
-      {/* Hero Content */}
       <motion.div 
         className="container mx-auto px-4 pt-10 md:pt-10 relative z-10"
         style={{ opacity, y, scale }}
       >
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8">
-          {/* Left Content */}
           <motion.div 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="lg:w-1/2 space-y-6"
           >
-            {/* Student status badges */}
             <div className="flex flex-wrap gap-3">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -148,15 +124,10 @@ const HeroSection = () => {
                 </span>
               </motion.div>
             </div>
-            
-            {/* Social Icons - Student Relevant */}
             <div className="flex items-center gap-4 mb-6">
               {[
                 { icon: <FaGithub />, href: "https://github.com/audumber28", label: "GitHub", color: "#f5f5f5" },
                 { icon: <FaLinkedinIn />, href: "https://www.linkedin.com/in/audumber-shirodkar-a007072b5", label: "LinkedIn", color: "#0077B5" },
-                
-               
-             
                 { icon: <FaInstagram />, href: "https://www.instagram.com/audumber28", label: "Instagram", color: "#E1306C" }
               ].map((social, index) => (
                 <motion.a 
@@ -182,8 +153,6 @@ const HeroSection = () => {
                 </motion.a>
               ))}
             </div>
-            
-            {/* Hero Text */}
             <div className="overflow-hidden">
               <motion.h2 
                 initial={{ opacity: 0, y: 20 }}
@@ -191,10 +160,9 @@ const HeroSection = () => {
                 transition={{ duration: 0.6, delay: 0.6 }}
                 className="font-popins text-3xl md:text-5xl text-white leading-tight font-medium"
               >
-                It&apos;m a Full Stack
+                I&apos;m a Full Stack
               </motion.h2>
             </div>
-            
             <div className="overflow-hidden flex flex-col">
               <motion.h1
                 initial={{ opacity: 0, y: 40 }}
@@ -213,8 +181,6 @@ const HeroSection = () => {
                 Developer
               </motion.h1>
             </div>
-            
-            {/* Typewriter effect */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -235,8 +201,6 @@ const HeroSection = () => {
                 }}
               />
             </motion.div>
-            
-            {/* Tech stack tags - student friendly */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -258,8 +222,6 @@ const HeroSection = () => {
                 ))}
               </div>
             </motion.div>
-            
-            {/* GitHub Stats Preview */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -277,7 +239,6 @@ const HeroSection = () => {
                   </div>
                   <HiOutlineChevronDown className={`text-gray-400 transition-transform duration-300 ${showGithubStats ? 'rotate-180' : ''}`} />
                 </div>
-                
                 <AnimatePresence>
                   {showGithubStats && (
                     <motion.div 
@@ -324,8 +285,6 @@ const HeroSection = () => {
                 </AnimatePresence>
               </div>
             </motion.div>
-            
-            {/* Email and CTA Buttons */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -345,8 +304,6 @@ const HeroSection = () => {
                   audumbershirodkar28@gmail.com
                 </a>
               </div>
-              
-              {/* CTA Buttons */}
               <div className="flex flex-wrap gap-4 pt-2">
                 <Link href="/projects" passHref>
                   <motion.div
@@ -392,8 +349,6 @@ const HeroSection = () => {
               </div>
             </motion.div>
           </motion.div>
-          
-          {/* Right Content - Profile Image with Student Journey */}
           <motion.div 
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -401,7 +356,6 @@ const HeroSection = () => {
             className="relative lg:w-2/5"
           >
             <div className="relative">
-              {/* Education Timeline - Visual representation */}
               <div className="absolute -top-14 -right-6 z-20">
                 <motion.div
                   initial={{ opacity: 0, scale: 0.9 }}
@@ -413,7 +367,6 @@ const HeroSection = () => {
                     <FaGraduationCap className="text-red-500" />
                     <span>Academic Journey</span>
                   </h4>
-                  
                   <div className="flex items-center gap-2">
                     {[1, 2, 3, 4].map((year) => (
                       <motion.div 
@@ -434,7 +387,6 @@ const HeroSection = () => {
                       </motion.div>
                     ))}
                   </div>
-                  
                   <div className="flex justify-between mt-8 text-xs text-gray-400">
                     <span>2023</span>
                     <span className="text-red-400">Current</span>
@@ -442,8 +394,6 @@ const HeroSection = () => {
                   </div>
                 </motion.div>
               </div>
-              
-              {/* Student-themed elements */}
               <div className="absolute -bottom-4 -left-4 z-20">
                 <motion.div
                   animate={{ rotate: [0, -5, 0] }}
@@ -454,15 +404,11 @@ const HeroSection = () => {
                   <span className="text-sm text-green-400">B.E Computer</span>
                 </motion.div>
               </div>
-              
-              {/* Animated decorative elements */}
               <motion.div
                 animate={{ rotate: [0, 360] }}
                 transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                 className="absolute inset-0 border border-dashed border-red-500/20 rounded-full -m-4"
               />
-              
-              {/* Profile Image with 3D Card Effect */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -470,7 +416,6 @@ const HeroSection = () => {
                 whileHover={{ scale: 1.03 }}
                 className="relative w-72 h-72 md:w-80 md:h-80 mx-auto perspective-card"
               >
-                {/* Image */}
                 <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-gray-800 shadow-[0_0_30px_rgba(220,38,38,0.2)]">
                  <Image 
   src="/main.jpg" 
@@ -481,8 +426,6 @@ const HeroSection = () => {
   unoptimized
 />
                 </div>
-                
-                {/* Student role tabs */}
                 <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 z-20">
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -504,11 +447,8 @@ const HeroSection = () => {
   <BiCodeAlt />
   Developer
 </button>
-
                   </motion.div>
                 </div>
-                
-                {/* Decorative code elements for student theme */}
                 <div className="absolute -right-8 top-10 z-20">
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -526,8 +466,6 @@ const HeroSection = () => {
             </div>
           </motion.div>
         </div>
-        
-        {/* Scroll Down Indicator */}
         <motion.div 
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -555,8 +493,6 @@ const HeroSection = () => {
           </motion.div>
         </motion.div>
       </motion.div>
-      
-      {/* About Section - College Student Style */}
       <div id="about-section" className="container mx-auto px-4 py-24 mt-10">
         <div className="max-w-5xl mx-auto">
           <motion.div
@@ -588,8 +524,6 @@ const HeroSection = () => {
               Third-year Computer Engineering student with a passion for web development
             </motion.p>
           </motion.div>
-          
-          {/* Navigation Tabs for About Section */}
           <div className="flex justify-center mb-8">
             <div className="inline-flex p-1 rounded-lg bg-gray-900/50 backdrop-blur-sm border border-gray-800">
               {['Education', 'Skills', 'Interests'].map((tab) => (
@@ -606,8 +540,6 @@ const HeroSection = () => {
               ))}
             </div>
           </div>
-          
-          {/* About Content - Student Friendly Card Style */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -617,9 +549,7 @@ const HeroSection = () => {
           >
             <div className="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-red-500/10 rounded-full blur-3xl"></div>
             <div className="absolute bottom-0 left-0 -mb-10 -ml-10 w-40 h-40 bg-red-500/10 rounded-full blur-3xl"></div>
-            
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8 p-8 md:p-10">
-              {/* Profile Image */}
               <motion.div 
                 className="md:col-span-5 lg:col-span-4"
                 whileHover={{ scale: 1.02 }}
@@ -627,8 +557,6 @@ const HeroSection = () => {
               >
                 <div className="relative rounded-xl overflow-hidden group">
                   <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60 z-10"></div>
-                  
-                  {/* Image Frame */}
                   <div className="relative rounded-xl overflow-hidden border border-gray-700 group-hover:border-red-500/50 transition-colors duration-300">
                     <Image 
                       src="/IMG20250330211532.jpg" 
@@ -637,23 +565,17 @@ const HeroSection = () => {
                       height={500}
                       className="object-cover w-full aspect-[4/5] group-hover:scale-105 transition-transform duration-700"
                     />
-                    
-                    {/* Academic Status Ribbon */}
                     <div className="absolute top-4 -right-8 transform rotate-45 bg-red-600 text-white text-xs py-1 px-8 shadow-lg">
                       {yearOfStudy === 1 ? "Freshman" : 
                        yearOfStudy === 2 ? "Sophomore" : 
                        yearOfStudy === 3 ? "Senior" : "Senior"}
                     </div>
                   </div>
-                  
-                  {/* Image Caption */}
                   <div className="absolute bottom-0 left-0 p-5 z-20">
                     <h3 className="text-xl font-bold text-white">Audumber Shirodkar</h3>
                     <p className="text-red-400 text-sm">Computer Engineering Student</p>
                   </div>
                 </div>
-                
-                {/* Student Info Cards */}
                 <div className="grid grid-cols-3 gap-2 mt-4">
                   <motion.div 
                     whileHover={{ scale: 1.05 }}
@@ -677,8 +599,6 @@ const HeroSection = () => {
                     <p className="text-xs text-gray-400 mt-1">Tech Skills</p>
                   </motion.div>
                 </div>
-                
-                {/* GitHub Card */}
                 <motion.a
                   href="https://github.com/audumber28"
                   target="_blank"
@@ -702,11 +622,8 @@ const HeroSection = () => {
                   </div>
                 </motion.a>
               </motion.div>
-              
-              {/* About Text Content - Student Edition */}
               <div className="md:col-span-7 lg:col-span-8 space-y-6">
                 <div className="space-y-5">
-                  {/* Bio Paragraphs with Student-Focused Content */}
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -717,7 +634,6 @@ const HeroSection = () => {
                     <p className="text-gray-300 leading-relaxed">
 Hi, I’m Audumber Shirodkar, a Computer Engineering student at Goa College of Engineering. I first got interested in technology when I started wondering how websites really work and how they connect people across the world. That curiosity slowly turned into a passion for exploring and learning more about the world of coding and development.                    </p>
                   </motion.div>
-                  
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -726,9 +642,8 @@ Hi, I’m Audumber Shirodkar, a Computer Engineering student at Goa College of E
                     className="relative pl-5 border-l-2 border-gray-700"
                   >
                     <p className="text-gray-300 leading-relaxed">
-As a student and budding full stack developer, I enjoy experimenting with both front-end and back-end technologies. I like taking small ideas and turning them into real projects—whether it’s building simple apps or working on more complex web applications. For me, it’s all about learning, improving, and enjoying the process of creating something useful.                    </p>
+As a student and budding full stack developer, I enjoy experimenting with both front-end and back-end technologies. I like taking small ideas and turning them into real projects whether it’s building simple apps or working on more complex web applications. For me, it’s all about learning, improving, and enjoying the process of creating something useful.                    </p>
                   </motion.div>
-                  
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -736,11 +651,8 @@ As a student and budding full stack developer, I enjoy experimenting with both f
                     viewport={{ once: true }}
                     className="relative pl-5 border-l-2 border-gray-700"
                   >
-                    
                   </motion.div>
                 </div>
-                
-                {/* Skills Section - Student Edition */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -752,9 +664,7 @@ As a student and budding full stack developer, I enjoy experimenting with both f
                     <span className="w-8 h-1 bg-red-500 rounded-full"></span>
                     Skills & Coursework
                   </h3>
-                  
                   <div className="space-y-4">
-                    {/* Student Skill Bars */}
                     <div>
                       <div className="flex justify-between mb-1">
                         <span className="text-sm text-gray-300">Web Development</span>
@@ -770,7 +680,6 @@ As a student and budding full stack developer, I enjoy experimenting with both f
                         ></motion.div>
                       </div>
                     </div>
-                    
                     <div>
                       <div className="flex justify-between mb-1">
                         <span className="text-sm text-gray-300">Data Structures & Algorithms</span>
@@ -786,7 +695,6 @@ As a student and budding full stack developer, I enjoy experimenting with both f
                         ></motion.div>
                       </div>
                     </div>
-                    
                     <div>
                       <div className="flex justify-between mb-1">
                         <span className="text-sm text-gray-300">Object-Oriented Programming</span>
@@ -804,8 +712,6 @@ As a student and budding full stack developer, I enjoy experimenting with both f
                     </div>
                   </div>
                 </motion.div>
-                
-                {/* Tech Stack Tags - College Student Edition */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -817,7 +723,6 @@ As a student and budding full stack developer, I enjoy experimenting with both f
                     <span className="w-8 h-1 bg-red-500 rounded-full"></span>
                     Tech Stack & Tools
                   </h3>
-                  
                   <div className="flex flex-wrap gap-2">
                     {[
                       { name: 'React', color: '#61DAFB' },
@@ -857,8 +762,6 @@ As a student and budding full stack developer, I enjoy experimenting with both f
                     ))}
                   </div>
                 </motion.div>
-                
-                {/* Current Courses Section */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -870,7 +773,6 @@ As a student and budding full stack developer, I enjoy experimenting with both f
                     <span className="w-8 h-1 bg-red-500 rounded-full"></span>
                     Current Courses
                   </h3>
-                  
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     {[
                       { name: 'Operating System' },
@@ -893,8 +795,6 @@ As a student and budding full stack developer, I enjoy experimenting with both f
                     ))}
                   </div>
                 </motion.div>
-                
-                {/* CTA Button - Student Edition */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -928,17 +828,14 @@ As a student and budding full stack developer, I enjoy experimenting with both f
           </motion.div>
         </div>
       </div>
-
       <style jsx>{`
         .perspective-card {
           perspective: 1000px;
         }
-        
         .perspective-card:hover > div {
           transform: rotateY(5deg) rotateX(-5deg);
           transition: transform 0.5s ease;
         }
-        
         @keyframes float {
           0% { transform: translateY(0px); }
           50% { transform: translateY(-10px); }

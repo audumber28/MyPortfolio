@@ -50,7 +50,6 @@ const Contact = () => {
 
   return (
     <div className="relative overflow-hidden min-h-screen">
-      {/* Background Video */}
       <video
         autoPlay
         loop
@@ -60,10 +59,7 @@ const Contact = () => {
         <source src="/background.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-
-      {/* Content Overlay */}
       <div className="relative z-10 flex flex-col items-center justify-start pt-10 min-h-full p-6 text-white bg-black bg-opacity-60">
-        {/* Back Button - Top Left */}
         <button
           type="button"
           onClick={handleBackClick}
@@ -85,8 +81,6 @@ const Contact = () => {
           </svg>
           HOME
         </button>
-
-        {/* Profile Section */}
         <div className="mb-8 flex flex-col items-center">
           <div className="relative">
             <Image
@@ -101,19 +95,15 @@ const Contact = () => {
               <div className="h-3 w-3 bg-green-400 rounded-full animate-pulse"></div>
             </div>
           </div>
-
           <div className="w-24 h-1 bg-gradient-to-r from-transparent via-red-500 to-transparent my-2"></div>
         </div>
-
         <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Contact Information */}
           <div className="flex flex-col space-y-8 p-6 backdrop-blur-sm bg-black bg-opacity-30 rounded-xl border border-gray-700">
             <h2 className="text-2xl font-extrabold relative inline-block">
               <span>Contact </span>
               <span className="text-red-500">Information</span>
               <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-red-500 to-transparent"></div>
             </h2>
-
             <div className="space-y-6">
               <div className="flex items-center space-x-4 group">
                 <div className="p-3 bg-red-500 bg-opacity-20 rounded-full group-hover:bg-red-500 group-hover:bg-opacity-100 transition-all duration-300">
@@ -129,7 +119,6 @@ const Contact = () => {
                   </a>
                 </div>
               </div>
-
               <div className="flex items-center space-x-4 group">
                 <div className="p-3 bg-red-500 bg-opacity-20 rounded-full group-hover:bg-red-500 group-hover:bg-opacity-100 transition-all duration-300">
                   <FaMapMarkerAlt className="w-6 h-6 text-red-400 group-hover:text-white" />
@@ -139,7 +128,6 @@ const Contact = () => {
                   <p className="text-lg">Valpoi, Goa, India</p>
                 </div>
               </div>
-
               <div className="flex items-center space-x-4 group">
                 <div className="p-3 bg-red-500 bg-opacity-20 rounded-full group-hover:bg-red-500 group-hover:bg-opacity-100 transition-all duration-300">
                   <FaGithub className="w-6 h-6 text-red-400 group-hover:text-white" />
@@ -157,7 +145,6 @@ const Contact = () => {
                 </div>
               </div>
             </div>
-
             <div className="mt-4">
               <h3 className="text-xl font-semibold mb-2">Connect With Me</h3>
               <p className="text-gray-300">
@@ -173,26 +160,21 @@ const Contact = () => {
                 >
                   <FaGithub className="w-5 h-5" />
                 </a>
-                {/* Add more social icons here as needed */}
               </div>
             </div>
           </div>
-
-          {/* Contact Form */}
           <div className="backdrop-blur-sm bg-black bg-opacity-30 p-6 rounded-xl border border-gray-700">
             <h2 className="text-2xl font-extrabold mb-6 relative inline-block">
               <span>Send a </span>
               <span className="text-red-500">Message</span>
               <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-red-500 to-transparent"></div>
             </h2>
-
             <form onSubmit={handleSubmit} className="space-y-4" noValidate>
               <input
                 type="hidden"
                 name="access_key"
                 value="ff4a516b-e69b-4d6f-8171-30790737e59d"
               />
-
               <div className="relative">
                 <input
                   className="peer w-full bg-black bg-opacity-50 text-white border-b-2 border-gray-500 focus:border-red-500 outline-none p-3 pt-6 transition-all duration-300"
@@ -210,7 +192,6 @@ const Contact = () => {
                   Your Name
                 </label>
               </div>
-
               <div className="relative">
                 <input
                   className="peer w-full bg-black bg-opacity-50 text-white border-b-2 border-gray-500 focus:border-red-500 outline-none p-3 pt-6 transition-all duration-300"
@@ -228,7 +209,6 @@ const Contact = () => {
                   Your Email
                 </label>
               </div>
-
               <div className="relative">
                 <textarea
                   className="peer w-full bg-black bg-opacity-50 text-white border-b-2 border-gray-500 focus:border-red-500 outline-none p-3 pt-6 min-h-[120px] transition-all duration-300"
@@ -245,9 +225,7 @@ const Contact = () => {
                   Your Message
                 </label>
               </div>
-
               <input type="checkbox" name="botcheck" style={{ display: "none" }} />
-
               <button
                 className="bg-gradient-to-r from-red-700 to-red-500 hover:from-red-800 hover:to-red-600 text-white px-6 py-3 rounded-md font-medium transition-all duration-300 flex items-center justify-center"
                 type="submit"
@@ -284,7 +262,6 @@ const Contact = () => {
                   "Send Message"
                 )}
               </button>
-
               {formStatus.message && (
                 <div
                   className={`mt-4 p-3 rounded-md ${
@@ -300,8 +277,6 @@ const Contact = () => {
             </form>
           </div>
         </div>
-
-        {/* Additional Information */}
         <div className="mt-16 max-w-3xl text-center">
           <h2 className="font-popins text-2xl font-extrabold mb-4">
             <span>Why </span>

@@ -7,7 +7,6 @@ const Projects = () => {
   const router = useRouter();
   const [activeTab, setActiveTab] = useState("all");
 
-  // Project data
   const projects = [
     {
       id: 4,
@@ -73,7 +72,6 @@ const Projects = () => {
     },
   ];
 
-  // Filter projects based on active tab
   const filteredProjects =
     activeTab === "all"
       ? projects
@@ -82,15 +80,12 @@ const Projects = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-black p-6">
       <div className="max-w-6xl mx-auto">
-        {/* Back Button */}
         <button
           onClick={() => router.push("/")}
           className="fixed top-6 left-6 z-50 text-red-500 border border-red-500 hover:bg-red-500 hover:text-white transition-all duration-300 px-4 py-2 rounded-md flex items-center gap-2"
         >
           Back
         </button>
-
-        {/* Header Section */}
         <div className="pt-24 pb-12 text-center">
           <div className="relative inline-block">
             <h1 className="text-4xl md:text-5xl font-bold">
@@ -103,8 +98,6 @@ const Projects = () => {
             Each project represents my passion for creating clean, efficient, and user-friendly applications.
           </p>
         </div>
-
-        {/* All Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           {filteredProjects.map((project) => (
             <div
@@ -122,7 +115,6 @@ const Projects = () => {
                   >
                     <FaGithub />
                   </a>
-                  {/* Add a live link only if it's not "#" */}
                   {project.live !== "#" && (
                     <a
                       href={project.live}
@@ -149,8 +141,6 @@ const Projects = () => {
             </div>
           ))}
         </div>
-
-        {/* GitHub Profile Section */}
         <div className="mb-16">
           <h2 className="text-2xl font-bold mb-6 flex items-center">
             <span className="w-8 h-0.5 bg-red-500 mr-3"></span>
@@ -176,8 +166,6 @@ const Projects = () => {
             </a>
           </div>
         </div>
-
-        {/* Get In Touch */}
         <div className="bg-gradient-to-br from-gray-900 to-black border border-gray-800 rounded-lg p-8 text-center hover:border-red-500 hover:shadow-[0_0_15px_rgba(185,28,28,0.2)] transition-all duration-500 mb-16">
           <h2 className="text-2xl font-bold mb-4">Interested in working together?</h2>
           <p className="text-gray-400 mb-6 max-w-2xl mx-auto">

@@ -28,7 +28,6 @@ const About = () => {
   const skills = [
     { name: "C", icon: "/c only.svg" },
     { name: "C++", icon: "/c PP.svg" },
-
     { name: "HTML", icon: "/html.svg" },
     { name: "CSS", icon: "/css-3.svg" },
     { name: "JavaScript", icon: "/javascript.svg" },
@@ -39,7 +38,6 @@ const About = () => {
     { name: "MongoDB", icon: "/MongoDB.png" },
     { name: "Material UI", icon: "/Material UI.png" },
     { name: "NextJS", icon: "/icons8-next.js-48 (1).png" },
-
     { name: "Firebase", icon: "/Firebase.png" },
     { name: "Socket.io", icon: "/socket-io-logo-black-and-white.png" },
     { name: "React", icon: "/react.svg" },
@@ -50,13 +48,10 @@ const About = () => {
 
   return (
     <div className="relative min-h-screen bg-gradient-to-b from-black via-gray-900 to-black overflow-hidden">
-      {/* Background Elements */}
       <div className="absolute top-0 left-0 w-full h-full z-0">
         <div className="absolute top-20 left-10 w-72 h-72 bg-red-700 rounded-full filter blur-[8rem] opacity-20"></div>
         <div className="absolute bottom-20 right-10 w-80 h-80 bg-red-700 rounded-full filter blur-[8rem] opacity-20"></div>
       </div>
-
-      {/* Back Button - Top Left */}
       <motion.button
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
@@ -81,10 +76,8 @@ const About = () => {
         </svg>
         Back
       </motion.button>
-
       <div className="relative z-10 container mx-auto px-4 py-20">
         <div className="flex flex-col items-center">
-          {/* Profile Section */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -135,11 +128,8 @@ const About = () => {
               >
                 <Image src="/github-icon-2.svg" width={24} height={24} alt="GitHub" />
               </a>
-              {/* Add more social links as needed */}
             </motion.div>
           </motion.div>
-
-          {/* About Section */}
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -154,7 +144,6 @@ const About = () => {
               <p className="text-gray-300 leading-relaxed">
                 I&apos;m Audumber Shirodkar, a dedicated Computer Engineering student at Goa College of Engineering (GEC) with a passion for full-stack web development. My journey in technology is driven by a desire to build innovative and efficient solutions that improve user experiences.
               </p>
-
               <p className="text-gray-300 leading-relaxed">
                 With proficiency in React, Next.js, CSS, HTML, Node.js, Bootstrap, C, and C++, I enjoy working across the entire web development stack, from creating sleek and responsive front-end interfaces to building robust back-end architectures.
               </p>
@@ -163,15 +152,12 @@ const About = () => {
               </p>
             </div>
           </motion.div>
-
-          {/* Education & Experience Section */}
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7, duration: 0.6 }}
             className="w-full max-w-3xl mt-16 grid grid-cols-1 md:grid-cols-2 gap-6"
           >
-            {/* Education Card */}
             <div className="backdrop-blur-sm bg-black bg-opacity-30 border border-gray-800 p-6 rounded-xl hover:border-red-700 hover:shadow-[0_0_15px_rgba(185,28,28,0.2)] transition-all duration-300">
               <h3 className="text-2xl font-bold mb-4 flex items-center">
                 <svg
@@ -216,8 +202,6 @@ const About = () => {
                 </div>
               </div>
             </div>
-
-            {/* Projects Card */}
             <div className="backdrop-blur-sm bg-black bg-opacity-30 border border-gray-800 p-6 rounded-xl hover:border-red-700 hover:shadow-[0_0_15px_rgba(185,28,28,0.2)] transition-all duration-300">
               <h3 className="text-2xl font-bold mb-4 flex items-center">
                 <svg
@@ -245,8 +229,8 @@ const About = () => {
                 </div>
                 <div className="border-l-2 border-gray-700 pl-4">
                   <h4 className="font-bold text-lg">Peer Edge</h4>
-                  <p className="text-gray-400">Code review platform</p>
-                  <p className="text-sm text-gray-500">React, Node.js</p>
+                  <p className="text-gray-400">Mentorship platform</p>
+                  <p className="text-sm text-gray-500">Nextjs, Node.js</p>
                 </div>
                 <div className="mt-6 flex justify-center">
                   <Link href="/projects" passHref>
@@ -271,8 +255,6 @@ const About = () => {
               </div>
             </div>
           </motion.div>
-
-          {/* Toolbox Section */}
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -283,7 +265,6 @@ const About = () => {
               My <span className="text-red-500">Toolbox</span>
               <div className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-red-500 to-transparent"></div>
             </h2>
-
             <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6 justify-items-center">
               {skills.map((skill, index) => (
                 <motion.div
@@ -300,7 +281,7 @@ const About = () => {
                       width={48}
                       height={48}
                       className="hover:scale-110 transition-transform duration-300"
-                      priority={index < 6} // prioritize first few icons for faster load
+                      priority={index < 6}
                     />
                   </div>
                   <span className="mt-2 text-sm text-gray-400 group-hover:text-white transition-colors duration-300">
