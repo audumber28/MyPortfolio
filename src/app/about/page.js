@@ -211,7 +211,7 @@ const About = () => {
                 </div>
                 <div className="border-l-2 border-gray-700 pl-4">
                   <h4 className="font-bold text-lg">Higher Secondary Education</h4>
-                  <p className="text-gray-400">Your High School</p>
+                  <p className="text-gray-400">Shri Shantadurga Higher Secondary School</p>
                   <p className="text-sm text-gray-500">2021 - 2023</p>
                 </div>
               </div>
